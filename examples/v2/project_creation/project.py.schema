@@ -37,12 +37,16 @@ properties:
     description: >
       The ID of the organization that the projects will be under. Typically a
       base-10 string representation of integer.
+      This is required if you provide shared_vpc_service_of or if
+      shared_vpc_host is set to true.
     type: string
     pattern: ^[0-9]{8,25}$
   parent-folder-id:
     description: >
       The ID of the parent folder that the projects will be under. Typically a
       base-10 string representation of integer.
+      If both parent-folder-id and organization-id are provided, the project
+      will be created in the folder.
     type: string
     pattern: ^[0-9]{8,25}$
   billing-account-name:
